@@ -1,18 +1,306 @@
-$myColor: #e0e1e6;
-
+$myColor: rgb(34, 33, 33);
+* {
+  margin: 0;
+}
 .App {
   background-color: $myColor;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  width: auto;
+  height: 100vh;
 }
-.partial {
-  padding: 15px;
-
+.header-line {
+  border-bottom: 4px solid rgb(101, 34, 163);
+  height: 35px;
+  width: 98%;
+  margin: auto;
+  p {
+    text-align: left;
+    font-size: large;
+    color: rgb(190, 190, 190);
+    font-weight: 600;
+    padding-top: 5px;
+  }
+}
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  float: left;
+  margin: 10px;
+  width: 400px;
+  height: 92vh;
+}
+.menu-input {
+  height: 50px;
+  input {
+    height: 65%;
+    width: 98%;
+    background-color: rgb(34, 33, 33);
+    border: 2px solid rgb(49, 49, 49);
+    border-radius: 3px;
+    color: white;
+  }
+}
+.menu-ticket-list {
+  background-color: rgb(49, 49, 49);
+  overflow-y: scroll;
+}
+.menu-ticket-list-title {
+  height: 35px;
+  width: 95%;
+  border-bottom: 1px solid $myColor;
+  margin: auto;
+  vertical-align: middle;
+  margin-bottom: 5px;
+  p {
+    padding: 5px 0;
+    font-size: 11px;
+    color: rgb(167, 166, 166);
+  }
+}
+.draw-box {
+  margin: 10px;
+  height: 92vh;
+  background-color: rgb(49, 49, 49);
+  overflow: hidden;
+  .select-ticket {
+    color: rgb(158, 156, 156);
+    font-size: 14px;
+    text-align: center;
+    margin-top: 40vh;
+  }
+}
+.grid {
+  height: 35px;
+  width: 95%;
+  border-bottom: 1px solid $myColor;
+  display: grid;
+  grid-template-columns: 50px 110px 150px 50px;
+  margin: auto;
   .image {
-    width: 230px;
-    height: 230px;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+}
+.partial-reptime {
+  color: rgb(163, 157, 157);
+  font-size: 14px;
+  text-align: center;
+  margin: auto;
+}
+.partial-asset {
+  color: rgb(163, 157, 157);
+  font-size: 14px;
+  text-align: left;
+  margin: auto;
+  margin-left: 10px;
+}
+.partial-status {
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 14px;
+  margin: auto;
+  &-ASD {
+    color: rgb(255, 217, 0);
+    font-size: 14px;
+    margin: 3px 10px;
+    text-align: center;
+  }
+  &-COM {
+    color: rgb(9, 224, 9);
+    font-size: 14px;
+    margin: 3px 10px;
+    text-align: center;
+  }
+  &-UNA {
+    color: rgb(158, 156, 156);
+    font-size: 14px;
+    margin: 3px 10px;
+    text-align: center;
+  }
+}
+.ticket-link {
+  text-decoration: none;
+}
+.ticket-link-active {
+  .grid {
+    border-left: 4px solid rgb(101, 34, 163);
+    background-color: rgba(85, 84, 84, 0.719);
+    .partial-asset {
+      color: white;
+    }
+  }
+}
+.main-draw {
+  margin: 20px;
+}
+.head-draw {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 15px;
+  color: rgb(167, 166, 166);
+  p span {
+    color: white;
+  }
+}
+.owner-draw {
+  border: 2px solid $myColor;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  height: 110px;
+  margin-bottom: 15px;
+  p {
+    padding: 5px;
+    height: 15px;
+    background-color: $myColor;
+    color: rgb(206, 206, 206);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  img {
+    margin: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+  }
+  .owner-draw-fdiv {
+    margin-top: 20px;
+    color: rgb(167, 166, 166);
+    font-size: 12px;
+    font-weight: 800;
+  }
+  .owner-draw-sdiv {
+    margin-top: 3px;
+    color: rgb(167, 166, 166);
+    font-size: 12px;
+  }
+}
+.detalis-draw {
+  border: 2px solid $myColor;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  height: 230px;
+  margin-bottom: 15px;
+  .detalis-draw-title {
+    padding: 5px;
+    height: 15px;
+    background-color: $myColor;
+    color: rgb(206, 206, 206);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .detalis-draw-rep {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: white;
+    p {
+      margin-bottom: 5px;
+      color: rgb(167, 166, 166);
+    }
+  }
+  .detalis-draw-status {
+    color: rgb(167, 166, 166);
+    font-size: 14px;
+    margin-top: 20px;
+    margin-left: 20px;
+    p {
+      margin-bottom: 5px;
+    }
+    &-ASD {
+      color: rgb(255, 217, 0);
+      font-size: 14px;
+      text-align: center;
+      height: 20px;
+      border: 1px solid black;
+      border-radius: 3px;
+      width: 50px;
+    }
+    &-COM {
+      color: rgb(9, 224, 9);
+      font-size: 14px;
+      text-align: center;
+      height: 20px;
+      border: 1px solid black;
+      border-radius: 3px;
+      width: 50px;
+    }
+    &-UNA {
+      color: rgb(158, 156, 156);
+      font-size: 14px;
+      text-align: center;
+      height: 20px;
+      border: 1px solid black;
+      border-radius: 3px;
+      width: 50px;
+    }
+  }
+  .detalis-draw-desctiption {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: white;
+    p {
+      margin-bottom: 5px;
+      color: rgb(167, 166, 166);
+    }
+  }
+}
+.asset-draw {
+  border: 2px solid $myColor;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  height: 230px;
+  .asset-draw-title {
+    padding: 5px;
+    height: 15px;
+    background-color: $myColor;
+    color: rgb(206, 206, 206);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .asset-draw-name {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: white;
+    p {
+      margin-bottom: 5px;
+      color: rgb(167, 166, 166);
+    }
+  }
+  .asset-draw-geocode {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: white;
+    p {
+      margin-bottom: 5px;
+      color: rgb(167, 166, 166);
+    }
+  }
+  .asset-draw-location {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: white;
+    p {
+      margin-bottom: 5px;
+      color: rgb(167, 166, 166);
+    }
+    span {
+      color: rgb(158, 156, 156);
+      font-size: 14px;
+      text-align: center;
+      border: 1px solid black;
+      border-radius: 3px;
+      font-size: 14px;
+      padding-left: 15px;
+      padding-right: 15px;
+      margin: 3px;
+    }
   }
 }
