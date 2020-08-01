@@ -2,6 +2,7 @@ import React from "react";
 import "../main.scss";
 import moment from "moment";
 import { NavLink } from "react-router-dom";
+import Status from "./Status";
 
 export default function TicketList(props) {
   return (
@@ -20,13 +21,7 @@ export default function TicketList(props) {
         </div>
         <div className="partial-asset">{props.assetName}</div>
         <div className="partial-status">
-          {props.status === "assigned" ? (
-            <div className="partial-status-ASD">ASD</div>
-          ) : props.status === "completed" ? (
-            <div className="partial-status-COM">COM</div>
-          ) : (
-            <div className="partial-status-UNA">UNA</div>
-          )}
+          <Status status={props.status} />
         </div>
       </div>
     </NavLink>

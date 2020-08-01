@@ -4,6 +4,7 @@ import moment from "moment";
 
 import { connect } from "react-redux";
 import { getData } from "../actions/pageActions";
+import Status from "./Status";
 
 function DrawBox(props) {
   useEffect(() => {
@@ -45,13 +46,7 @@ function DrawBox(props) {
               </div>
               <div className="detalis-draw-status">
                 <p>Status</p>
-                {d.status === "assigned" ? (
-                  <div className="detalis-draw-status-ASD">ASD</div>
-                ) : d.status === "completed" ? (
-                  <div className="detalis-draw-status-COM">COM</div>
-                ) : (
-                  <div className="detalis-draw-status-UNA">UNA</div>
-                )}
+                <Status status={d.status} />
               </div>
               <div className="detalis-draw-desctiption">
                 <p>Description</p>
